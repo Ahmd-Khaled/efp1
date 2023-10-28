@@ -1,0 +1,41 @@
+navbar = document.querySelector(".navbar");
+header = document.querySelector(".header");
+mlinks = document.querySelector(".mlinks");
+lines = document.querySelector(".lines");
+closei = document.querySelector(".close");
+newsandevents = document.querySelector(".navbar .newsandevents");
+
+downlistx = document.querySelectorAll(".downlistx");
+
+downlistnews = document.querySelector(".downlistnews");
+downlistpub = document.querySelector(".downlistpub");
+more1 = document.querySelector(".downlistx .box.list ul li.more");
+emptyboxul = document.querySelector(".downlistx .box.emptycontent ul");
+
+
+lines.addEventListener("click", function () {
+    mlinks.classList.toggle("rmv");
+    closei.style.display = 'block';
+    this.style.display = 'none';
+});
+
+closei.addEventListener("click", function () {
+    mlinks.classList.toggle("rmv");
+    lines.style.display = 'block';
+    this.style.display = 'none';
+});
+
+downlistnews.addEventListener("click", dropdownlist (downlistnews));
+downlistpub.addEventListener("click", dropdownlist (downlistpub));
+
+more1.addEventListener("click", function () {
+    emptyboxul.classList.toggle("show");
+    this.style.color = '#2F5FAE';
+});
+
+
+function dropdownlist (dropdown) {
+    dropdown.classList.toggle("clicked");
+    document.querySelector(".navbar ul li").classList.toggle("active");
+    document.querySelector(".navbar ul").classList.toggle("hovered");
+}
